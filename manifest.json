@@ -1,3 +1,21 @@
 {
-  "name"
+  "name": "bear",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["tabs", "storage", "declarativeContent", "https://*.netflix.com/"],
+  "content_scripts": [
+      {
+          "matches": ["https://www.netflix.com/*?jbv=*", "https://www.netflix.com/title*"],
+          "js": ["content.js"]
+      }
+  ],
+  "permissions": [
+      "tabs",
+      "notifications",
+      "http://*/",
+      "https://*/"
+    ],
+    "background": {
+      "scripts":["background.js"]
+  }
 }
